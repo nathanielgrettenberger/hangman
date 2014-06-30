@@ -10,10 +10,12 @@ namespace Hangman
     {
         static void Main(string[] args)
         {
-            WordMasked("nathaniel","nathaniel");
+            
             HangMan();
+            WordMask("nathaniel","nathaniel");
             Console.ReadKey();
         }
+
 
         static void HangMan()
         {
@@ -41,11 +43,7 @@ namespace Hangman
             for (int i = 0; i < theWord.Length; i++)
             {
                 hidden += "_  ";
-                if (mistakes == "_ ")
-                {
-                   
-
-                }
+               
                 {
 
                 }
@@ -60,7 +58,7 @@ namespace Hangman
             {
                 //declare game variables
                 string userGuess = Console.ReadLine().ToUpper();
-                string rghtAns = "_ ";
+                
 
                 // checking user guess for format
 
