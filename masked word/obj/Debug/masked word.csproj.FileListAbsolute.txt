@@ -1,0 +1,6 @@
+C:\Users\Technologist\Documents\GitHub\hangman\masked word\bin\Debug\masked word.exe.config
+C:\Users\Technologist\Documents\GitHub\hangman\masked word\obj\Debug\masked word.csprojResolveAssemblyReference.cache
+C:\Users\Technologist\Documents\GitHub\hangman\masked word\bin\Debug\masked word.exe
+C:\Users\Technologist\Documents\GitHub\hangman\masked word\bin\Debug\masked word.pdb
+C:\Users\Technologist\Documents\GitHub\hangman\masked word\obj\Debug\masked word.exe
+C:\Users\Technologist\Documents\GitHub\hangman\masked word\obj\Debug\masked word.pdb
