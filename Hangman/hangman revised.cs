@@ -56,6 +56,11 @@ namespace masked_word2
                             playing = false;
                             Console.WriteLine("Damn homie! You the Man homie");
                         }
+                        if (wordToGuess.Contains(wordToGuess))
+                        {
+                            Console.WriteLine(" You Guessed That Already");
+                            
+                        }
 
                     }
                     else
@@ -75,6 +80,8 @@ namespace masked_word2
                     {
                         Console.WriteLine("Dang homie, You won!!");
                     }
+                  
+                   
                 }
 
 
