@@ -12,7 +12,7 @@ namespace Hangman
         {
             
             HangMan();
-            WordMask("nathaniel","nathaniel");
+WordMask("nathaniel","nathaniel");
             Console.ReadKey();
         }
 
