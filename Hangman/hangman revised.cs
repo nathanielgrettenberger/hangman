@@ -58,7 +58,9 @@ namespace masked_word2
                         }
                         if (wordToGuess.Contains(wordToGuess))
                         {
+                           
                             Console.WriteLine(" You Guessed That Already");
+                            Console.WriteLine(wordToGuess);
                             
                         }
 

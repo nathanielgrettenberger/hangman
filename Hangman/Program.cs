@@ -12,7 +12,9 @@ namespace Hangman
         {
             
             HangMan();
-WordMask("nathaniel","nathaniel");
+            
+
+
             Console.ReadKey();
         }
 
@@ -29,7 +31,7 @@ WordMask("nathaniel","nathaniel");
             Console.WriteLine(" Well first and foremost" + name + " I want to thank you for playing!! Now the point of the game is for you to guess the word before you run out of guesses! I have faith in you so good luck!!");
 
             //declaring function variables 
-            List<string> list = new List<string> { " nathaniel", "yoMomma", " punk" };
+            List<string> list = new List<string> { "nathaniel", "yoMomma", " punk" };
             bool looping = true;
             Random randomNumberGenerator = new Random();
             int randomNumber = randomNumberGenerator.Next(0, 2);
@@ -57,6 +59,12 @@ WordMask("nathaniel","nathaniel");
             while (looping)
             {
                 //declare game variables
+                //display the masked word to the user
+                Console.WriteLine(" Letters guessed: " + allUserGuess);
+                Console.WriteLine(" Mistakes left: " + mistakes);
+                Console.WriteLine(wordMask(theWord, allUserGuess));
+
+                //ask the user to put in a guess
                 string userGuess = Console.ReadLine().ToUpper();
                 
 
@@ -72,31 +80,11 @@ WordMask("nathaniel","nathaniel");
                     if (theWord.Contains(userGuess))
                     {
 
-                        for (int i = 0; i < theWord.Length; i++)
-                        {
-                            if (Convert.ToChar(userGuess) == theWord[i / 2])
-                            {
-                                hidden = hidden.Remove(i / 2, 1).Insert(i / 2, userGuess);
-                                Console.WriteLine(userGuess, "");
-                            }
-                        }
+
                     }
                     else
                     {
                         mistakes = mistakes - 1;
-                    }
-
-                    
-                    {
-                        
-                        
-                    }
-                   
-                    { 
-                       
-                        
-               
-                        
                     }
                     if (mistakes == 0)
                     {
@@ -115,36 +103,60 @@ WordMask("nathaniel","nathaniel");
 
 
                 }
-                Console.WriteLine(hidden);
+                if (AllLettersGuessed(wordMask(theWord,allUserGuess))|| userGuess.ToUpper() == theWord.ToUpper())
+                {
+                    looping = false;
+                    Console.WriteLine("Congrats! You won!");
 
-                Console.WriteLine(" Letters guessed: " + allUserGuess);
-                Console.WriteLine(" Mistakes left: " + mistakes);
+                }
+
+                
             }
         }
 
-            
-             static void WordMask(string a, string b)
-        {
-            string word = a;
-            string guessed = b;
-            string temp = " ";
 
-            for (int i = 0; i < word.Length; i++)
+
+
+        static string wordMask(string wordToGet, string lettersNamed)
+        {
+            // strign to return our masked string
+            string returnString = " ";
+
+            // looping over the string to examine each char
+            for (int i = 0; i < wordToGet.Length; i++)
             {
-                char temp1 = word[i];
-                if (guessed.Contains(temp1))
+                // get a letter out of the index of the word to get
+                char letter = wordToGet[i];
+                // if the letter in the word to guess has been guessed by the user
+                if (lettersNamed.ToUpper().Contains(letter.ToString().ToUpper()))
                 {
-                    temp = temp + temp1 + " ";
+                    // print the right answer
+
+                    returnString += letter + " ";
                 }
                 else
                 {
-                    temp = temp + "_ ";
+                    // add underscore to return string
+                    returnString += "_ ";
                 }
+            }
+            //return the string
+            return returnString;
+        }
+        static bool AllLettersGuessed(string wordMask)
+        {
 
-                Console.WriteLine(temp);
+            //determine if the usre has guessed all the letter of the word
 
+            if (wordMask.Contains("_"))
+            {
+                return false;
 
-       }
+            }
+            else
+            {
+                return true;
+            }
             
 	
 
